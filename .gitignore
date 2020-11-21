@@ -2,3 +2,9 @@ virt
 __pycache__
 route.py
 .DS_Store
+.idea
+__pycache__
+*.db
+*.egg-info
+dist
+build
