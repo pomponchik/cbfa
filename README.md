@@ -5,7 +5,7 @@
 Устанавливаем:
 
 ```
-$ pip install polog
+$ pip install cbfa
 ```
 
 И используем:
