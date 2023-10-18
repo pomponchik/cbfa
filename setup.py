@@ -8,7 +8,7 @@ requirements = []
 
 setup(
     name='cbfa',
-    version='0.0.1',
+    version='0.0.2',
     author='Evgeniy Blinov',
     author_email='zheni-b@yandex.ru',
     description='Class-based views for the FastAPI',
