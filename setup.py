@@ -30,5 +30,6 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries',
+        'Framework :: FastAPI',
     ],
 )
