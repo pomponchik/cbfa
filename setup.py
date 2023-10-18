@@ -17,7 +17,18 @@ setup(
     packages=find_packages(exclude='tests'),
     install_requires=requirements,
     classifiers=[
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: Microsoft :: Windows',
+        'Operating System :: POSIX',
+        'Operating System :: POSIX :: Linux',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'License :: OSI Approved :: MIT License',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Libraries',
     ],
 )
