@@ -10,3 +10,4 @@ dist
 build
 venv
 .pytest_cache
+test.py
