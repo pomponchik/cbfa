@@ -8,15 +8,15 @@
 [![PyPI version](https://badge.fury.io/py/cbfa.svg)](https://badge.fury.io/py/cbfa)
 
 
-Немного манки-патчинга для FastAPI, хендлеры на основе классов. Пока без  поддержки ```self```.
+A bit of dummy patching for FastAPI, class-based handlers. So far without `self` support.
 
-Устанавливаем:
+Install it:
 
-```
+```bash
 $ pip install cbfa
 ```
 
-И используем:
+And use:
 
 ```python
 from typing import Optional
