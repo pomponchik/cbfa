@@ -1,4 +1,4 @@
-# cbfa
+![logo](https://raw.githubusercontent.com/pomponchik/cbfa/develop/docs/assets/logo_2.png)
 
 [![Downloads](https://static.pepy.tech/badge/cbfa/month)](https://pepy.tech/project/cbfa)
 [![Downloads](https://static.pepy.tech/badge/cbfa)](https://pepy.tech/project/cbfa)
