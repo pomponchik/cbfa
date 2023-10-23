@@ -1,4 +1,4 @@
-# cbfa
+![logo](https://raw.githubusercontent.com/pomponchik/cbfa/develop/docs/assets/logo_4.png)
 
 [![Downloads](https://static.pepy.tech/badge/cbfa/month)](https://pepy.tech/project/cbfa)
 [![Downloads](https://static.pepy.tech/badge/cbfa)](https://pepy.tech/project/cbfa)
@@ -6,17 +6,18 @@
 [![Test-Package](https://github.com/pomponchik/cbfa/actions/workflows/tests_and_coverage.yml/badge.svg)](https://github.com/pomponchik/cbfa/actions/workflows/tests_and_coverage.yml)
 [![Python versions](https://img.shields.io/pypi/pyversions/cbfa.svg)](https://pypi.python.org/pypi/cbfa)
 [![PyPI version](https://badge.fury.io/py/cbfa.svg)](https://badge.fury.io/py/cbfa)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 
-Немного манки-патчинга для FastAPI, хендлеры на основе классов. Пока без  поддержки ```self```.
+A bit of dummy patching for FastAPI, class-based handlers. So far without `self` support.
 
-Устанавливаем:
+Install it:
 
-```
+```bash
 $ pip install cbfa
 ```
 
-И используем:
+And use:
 
 ```python
 from typing import Optional
