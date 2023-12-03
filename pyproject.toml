@@ -4,7 +4,7 @@ build-backend = 'setuptools.build_meta'
 
 [project]
 name = 'cbfa'
-version = '0.0.4'
+version = '0.0.5'
 authors = [
   { name='Evgeniy Blinov', email='zheni-b@yandex.ru' },
 ]
@@ -22,6 +22,7 @@ classifiers = [
   'Programming Language :: Python :: 3.9',
   'Programming Language :: Python :: 3.10',
   'Programming Language :: Python :: 3.11',
+  'Programming Language :: Python :: 3.12',
   'License :: OSI Approved :: MIT License',
   'Intended Audience :: Developers',
   'Topic :: Software Development :: Libraries',
