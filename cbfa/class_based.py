@@ -1,3 +1,8 @@
+from typing import Callable, Type, Optional, Any
+
+from fastapi import FastAPI
+
+
 class ClassBased:
     methods = (
         'get',
@@ -11,11 +16,11 @@ class ClassBased:
         'patch',
     )
 
-    def __init__(self, app):
+    def __init__(self, app: FastAPI) -> None:
         self.app = app
 
-    def __call__(self, *args, **kwargs):
-        def decorator(Class):
+    def __call__(self, *args: Any, **kwargs: Any) -> Callable[[Type[Any]], Type[Any]]:
+        def decorator(Class: Type[Any]) -> Type[Any]:
             for method_name in self.methods:
                 if hasattr(Class, method_name):
                     method = self.get_method(method_name)
@@ -28,5 +33,5 @@ class ClassBased:
             return Class
         return decorator
 
-    def get_method(self, method_name):
+    def get_method(self, method_name: str) -> Optional[Callable[..., Any]]:
         return getattr(self.app, method_name, None)
