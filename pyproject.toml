@@ -32,6 +32,9 @@ classifiers = [
   'Framework :: FastAPI',
 ]
 
+[tool.setuptools.package-data]
+"cbfa" = ["py.typed"]
+
 [project.urls]
 'Source' = 'https://github.com/pomponchik/cbfa'
 'Tracker' = 'https://github.com/pomponchik/cbfa/issues'
