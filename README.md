@@ -6,6 +6,7 @@
 [![Test-Package](https://github.com/pomponchik/cbfa/actions/workflows/tests_and_coverage.yml/badge.svg)](https://github.com/pomponchik/cbfa/actions/workflows/tests_and_coverage.yml)
 [![Python versions](https://img.shields.io/pypi/pyversions/cbfa.svg)](https://pypi.python.org/pypi/cbfa)
 [![PyPI version](https://badge.fury.io/py/cbfa.svg)](https://badge.fury.io/py/cbfa)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 
