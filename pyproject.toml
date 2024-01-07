@@ -11,6 +11,9 @@ authors = [
 description = 'Class-based views for the FastAPI'
 readme = 'README.md'
 requires-python = '>=3.7'
+dependencies = [
+    'fastapi',
+]
 classifiers = [
   'Operating System :: MacOS :: MacOS X',
   'Operating System :: Microsoft :: Windows',
