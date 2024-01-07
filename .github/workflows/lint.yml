@@ -23,6 +23,10 @@ jobs:
       shell: bash
       run: pip install -r requirements_dev.txt
 
+    - name: Run mypy
+      shell: bash
+      run: mypy cbfa --strict
+
     - name: Run ruff
       shell: bash
       run: ruff cbfa
