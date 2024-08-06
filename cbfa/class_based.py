@@ -1,3 +1,4 @@
+import functools
 from typing import Callable, Type, Optional, Any
 
 from fastapi import FastAPI
@@ -21,15 +22,17 @@ class ClassBased:
 
     def __call__(self, *args: Any, **kwargs: Any) -> Callable[[Type[Any]], Type[Any]]:
         def decorator(Class: Type[Any]) -> Type[Any]:
+            instance = Class()
             for method_name in self.methods:
-                if hasattr(Class, method_name):
+                if hasattr(instance, method_name):
                     fastapi_decorator_fabrique = self.get_fastapi_decorator_fabrique(method_name)
                     if fastapi_decorator_fabrique is not None:
                         fast_api_decorator = fastapi_decorator_fabrique(*args, **kwargs)
-                        new_method = getattr(Class, method_name)
+                        new_method = getattr(instance, method_name)
+                        new_method = functools.partial(new_method.__func__, instance)
                         new_method.__name__ = f'{Class.__name__.lower()}_{method_name}'
                         new_method = fast_api_decorator(new_method)
-                        setattr(Class, method_name, new_method)
+                        setattr(instance, method_name, new_method)
             return Class
         return decorator
 
