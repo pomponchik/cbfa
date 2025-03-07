@@ -12,3 +12,4 @@ venv
 .pytest_cache
 test.py
 .mypy_cache
+.coverage
