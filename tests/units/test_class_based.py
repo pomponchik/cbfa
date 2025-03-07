@@ -34,6 +34,11 @@ class PseudoApp:
         return lambda x: x
 
 
+class PseudoAppWithoutHTTPMethods:
+    def __init__(self):
+        self.calls = []
+
+
 def test_wrap_only_get():
     app = PseudoApp()
     wrapper = ClassBased(app)
@@ -73,3 +78,34 @@ def test_wrap_all():
             pass
 
     assert app.calls == [('get', url), ('post', url), ('put', url), ('delete', url), ('trace', url), ('head', url), ('options', url), ('connect', url), ('patch', url)]
+
+
+def test_wrap_something_which_is_not_supported_in_app():
+    url = '/kek'
+    app = PseudoAppWithoutHTTPMethods()
+    wrapper = ClassBased(app)
+
+    @wrapper(url)
+    class SomeItem:
+        def get():
+            pass
+        def post():
+            pass
+        def put():
+            pass
+        def delete():
+            pass
+        def trace():
+            pass
+        def head():
+            pass
+        def options():
+            pass
+        def connect():
+            pass
+        def patch():
+            pass
+        def kek():
+            pass
+
+    assert app.calls == []
