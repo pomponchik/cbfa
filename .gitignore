@@ -13,3 +13,4 @@ venv
 test.py
 .mypy_cache
 .coverage
+htmlcov
