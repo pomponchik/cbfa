@@ -1,4 +1,4 @@
-name: tests
+name: Tests
 
 on:
   push
@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
 
     steps:
     - uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
       run: pip install -r requirements_dev.txt
 
     - name: Run tests and show coverage on the command line
-      run: coverage run --source=cbfa --omit="*tests*" -m pytest --cache-clear && coverage report -m
+      run: coverage run --source=cbfa --omit="*tests*" -m pytest --cache-clear && coverage report -m --fail-under=100
 
     - name: Upload reports to codecov
       env:
@@ -39,3 +39,6 @@ jobs:
        find . -iregex "codecov.*"
        chmod +x codecov
        ./codecov -t ${CODECOV_TOKEN}
+
+    - name: Run tests and show the branch coverage on the command line
+      run: coverage run --branch --source=cbfa --omit="*tests*" -m pytest --cache-clear --assert=plain && coverage report -m --fail-under=100

@@ -4,13 +4,13 @@ build-backend = 'setuptools.build_meta'
 
 [project]
 name = 'cbfa'
-version = '0.0.6'
+version = '0.0.7'
 authors = [
   { name='Evgeniy Blinov', email='zheni-b@yandex.ru' },
 ]
 description = 'Class-based views for the FastAPI'
 readme = 'README.md'
-requires-python = '>=3.7'
+requires-python = '>=3.8'
 dependencies = [
     'fastapi',
 ]
@@ -20,12 +20,12 @@ classifiers = [
   'Operating System :: POSIX',
   'Operating System :: POSIX :: Linux',
   'Programming Language :: Python',
-  'Programming Language :: Python :: 3.7',
   'Programming Language :: Python :: 3.8',
   'Programming Language :: Python :: 3.9',
   'Programming Language :: Python :: 3.10',
   'Programming Language :: Python :: 3.11',
   'Programming Language :: Python :: 3.12',
+  'Programming Language :: Python :: 3.13',
   'License :: OSI Approved :: MIT License',
   'Intended Audience :: Developers',
   'Topic :: Software Development :: Libraries',
