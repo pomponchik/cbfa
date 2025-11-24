@@ -2,7 +2,7 @@
 
 [![Downloads](https://static.pepy.tech/badge/cbfa/month)](https://pepy.tech/project/cbfa)
 [![Downloads](https://static.pepy.tech/badge/cbfa)](https://pepy.tech/project/cbfa)
-[![codecov](https://codecov.io/gh/pomponchik/cbfa/graph/badge.svg?token=7XDY2T7S68)](https://codecov.io/gh/pomponchik/cbfa)
+[![Coverage Status](https://coveralls.io/repos/github/pomponchik/cbfa/badge.svg?branch=main)](https://coveralls.io/github/pomponchik/cbfa?branch=main)
 [![Hits-of-Code](https://hitsofcode.com/github/pomponchik/cbfa?branch=main)](https://hitsofcode.com/github/pomponchik/cbfa/view?branch=main)
 [![Tests](https://github.com/pomponchik/cbfa/actions/workflows/tests_and_coverage.yml/badge.svg)](https://github.com/pomponchik/cbfa/actions/workflows/tests_and_coverage.yml)
 [![Python versions](https://img.shields.io/pypi/pyversions/cbfa.svg)](https://pypi.python.org/pypi/cbfa)

@@ -10,12 +10,12 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12', '3.13', '3.14', '3.14t']
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
           python-version: ${{ matrix.python-version }}
 
@@ -28,17 +28,18 @@ jobs:
       run: pip install -r requirements_dev.txt
 
     - name: Run tests and show coverage on the command line
-      run: coverage run --source=cbfa --omit="*tests*" -m pytest --cache-clear && coverage report -m --fail-under=100
-
-    - name: Upload reports to codecov
-      env:
-        CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-      if: runner.os == 'Linux'
       run: |
-       curl -Os https://uploader.codecov.io/latest/linux/codecov
-       find . -iregex "codecov.*"
-       chmod +x codecov
-       ./codecov -t ${CODECOV_TOKEN}
+        coverage run --source=cbfa --omit="*tests*" -m pytest --cache-clear --assert=plain && coverage report -m --fail-under=100
+        coverage xml
+
+    - name: Upload coverage to Coveralls
+      if: runner.os == 'Linux'
+      env:
+        COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
+      uses: coverallsapp/github-action@v2
+      with:
+        format: cobertura
+        file: coverage.xml
 
     - name: Run tests and show the branch coverage on the command line
       run: coverage run --branch --source=cbfa --omit="*tests*" -m pytest --cache-clear --assert=plain && coverage report -m --fail-under=100
