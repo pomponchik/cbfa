@@ -28,17 +28,18 @@ jobs:
       run: pip install -r requirements_dev.txt
 
     - name: Run tests and show coverage on the command line
-      run: coverage run --source=cbfa --omit="*tests*" -m pytest --cache-clear && coverage report -m --fail-under=100
-
-    - name: Upload reports to codecov
-      env:
-        CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-      if: runner.os == 'Linux'
       run: |
-       curl -Os https://uploader.codecov.io/latest/linux/codecov
-       find . -iregex "codecov.*"
-       chmod +x codecov
-       ./codecov -t ${CODECOV_TOKEN}
+        coverage run --source=cbfa --omit="*tests*" -m pytest --cache-clear --assert=plain && coverage report -m --fail-under=100
+        coverage xml
+
+    - name: Upload coverage to Coveralls
+      if: runner.os == 'Linux'
+      env:
+        COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
+      uses: coverallsapp/github-action@v2
+      with:
+        format: cobertura
+        file: coverage.xml
 
     - name: Run tests and show the branch coverage on the command line
       run: coverage run --branch --source=cbfa --omit="*tests*" -m pytest --cache-clear --assert=plain && coverage report -m --fail-under=100
